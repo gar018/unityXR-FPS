@@ -14,7 +14,8 @@ public class SlideMechanism : MonoBehaviour
     }
     public void Fire()
     {
-        rb.AddForce(Vector3.right*forcePower);
+            rb.AddRelativeForce(Vector3.right*forcePower);
+        
     }
 }
 

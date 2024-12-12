@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d6d0a46165f4bd486c00183538530d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcePower: 2000
+  forcePower: 50
 --- !u!1 &547229427
 GameObject:
   m_ObjectHideFlags: 0
@@ -10398,7 +10398,17 @@ PrefabInstance:
     - target: {fileID: 785440597050710640, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
         type: 3}
       propertyPath: m_UseGravity
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 785440597050710640, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 785440597050710640, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1915723854591440869, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
         type: 3}
@@ -10438,7 +10448,7 @@ PrefabInstance:
     - target: {fileID: 2641267443002770630, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
         type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2641267443002770630, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
         type: 3}
@@ -10565,6 +10575,36 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8899170964898807237, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
+        type: 3}
+      propertyPath: m_TargetPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899170964898807237, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
+        type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899170964898807237, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
+        type: 3}
+      propertyPath: m_XDrive.positionDamper
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899170964898807237, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
+        type: 3}
+      propertyPath: m_XDrive.positionSpring
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899170964898807237, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
+        type: 3}
+      propertyPath: m_LinearLimitSpring.damper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8899170964898807237, guid: 32ba6d88e7d8f446fa40361e48fd8e2c,
+        type: 3}
+      propertyPath: m_LinearLimitSpring.spring
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10641,6 +10681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rifle Mag
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324982581835142691, guid: 612d02f0edef84417b9155ef1b672af9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12060,6 +12105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783724790736806903, guid: 94bbf55ac7b18491499195ad14cab2b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
