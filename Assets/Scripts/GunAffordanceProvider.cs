@@ -16,9 +16,7 @@ public enum GunAffordanceState
     EMPTY,
     LOADED,
     OUTOFAMMO,
-    CHAMBERED,
-    UNSELECTED,//special state meant to hide affordances when the gun isnt being used
-    NONE //additional fail-safe state that can be used under edge cases (if they arise)
+    CHAMBERED
 
 }
 
@@ -42,8 +40,11 @@ public class GunAffordanceProvider : MonoBehaviour
     [Tooltip("Used for both racking and releasing the slide.")]
     [SerializeField] private AudioClip rackSlide;
 
-    [Tooltip("Used to notify when a bullet has been chambered or no ammo remains.")]
-    [SerializeField] private AudioClip ammoAlertSound;
+    [Tooltip("Used to notify when no ammo remains.")]
+    [SerializeField] private AudioClip outOfAmmoAlertSound;
+
+    [Tooltip("Used to notify when a bullet has been chambered.")]
+    [SerializeField] private AudioClip chamberedAlertSound;
     
 
     [Header("Particles")]
@@ -87,12 +88,12 @@ public class GunAffordanceProvider : MonoBehaviour
 
             //AUDIO EFFECTS
             PlaySound(liveFire, Random.Range(0.9f, 1.1f));
-           /* if (!gunHasMoreBullets) {
-                PlaySound(ammoAlertSound, 1.0f);
-            }*/
+            if (!gunHasMoreBullets) {
+                PlaySound(outOfAmmoAlertSound, -1.0f);
+            }
 
             //VISUAL EFFECTS
-            //muzzleFlash.Play();
+            muzzleFlash.Play();
             slide.Fire();
             muzzle.Fire();
             ejectionPort.Fire();
@@ -100,7 +101,7 @@ public class GunAffordanceProvider : MonoBehaviour
             //STATE LOGIC
             if (gunHasMoreBullets)
             {
-                magazine.ammoCount--;
+                magazine.Decrement();
             }
             else
             {
@@ -132,7 +133,7 @@ public class GunAffordanceProvider : MonoBehaviour
             //AUDIO EFFECTS
             PlaySound(rackSlide, 0.6f);
             if (!gunHasMoreBullets) {
-                PlaySound(ammoAlertSound, 1.0f);
+                PlaySound(outOfAmmoAlertSound, -1.0f);
             }
 
             //VISUAL EFFECTS
@@ -151,7 +152,7 @@ public class GunAffordanceProvider : MonoBehaviour
         else
         {
             //AUDIO EFFECTS
-            PlaySound(rackSlide, 1.0f);
+            PlaySound(rackSlide, 0.6f);
 
             //VISUAL EFFECTS
             slide.PullbackSlide();
@@ -167,7 +168,7 @@ public class GunAffordanceProvider : MonoBehaviour
             bool gunHasMoreBullets = (magazine != null && magazine.ammoCount > 0);
 
             //AUDIO EFFECTS
-            PlaySound(rackSlide, 0.4f);
+            PlaySound(rackSlide, 0f);
 
             //VISUAL EFFECTS
             slide.ReleaseSlide();
@@ -175,7 +176,7 @@ public class GunAffordanceProvider : MonoBehaviour
             //STATE LOGIC
             if (gunHasMoreBullets)
             {
-                magazine.ammoCount--;
+                magazine.Decrement();
             }
             else
             {
@@ -194,8 +195,8 @@ public class GunAffordanceProvider : MonoBehaviour
         else if (affordanceState == GunAffordanceState.LOADED)
         {
             //AUDIO EFFECTS
-            PlaySound(rackSlide, 1.0f);
-            PlaySound(ammoAlertSound, 1.0f);
+            PlaySound(rackSlide, 0f);
+            PlaySound(chamberedAlertSound, 1.0f);
 
             //VISUAL EFFECTS
             slide.ReleaseSlide();
@@ -203,7 +204,7 @@ public class GunAffordanceProvider : MonoBehaviour
             //STATE LOGIC
             if(magazine != null)
             {
-                magazine.ammoCount--;
+                magazine.Decrement();
                 affordanceState = GunAffordanceState.CHAMBERED;
             }
             else //this state should never be reached. however, this does prevent any weird logic from happening.
@@ -216,7 +217,7 @@ public class GunAffordanceProvider : MonoBehaviour
         else 
         {
             //AUDIO EFFECTS
-            PlaySound(rackSlide, 1.0f);
+            PlaySound(rackSlide, 0f);
 
             //VISUAL EFFECTS
             slide.ReleaseSlide();
