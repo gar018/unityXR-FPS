@@ -28,6 +28,14 @@ public class LaunchProjectile : MonoBehaviour
         
     }
 
+    public void Fire(GameObject givenPrefab)
+    {
+        GameObject newObject = Instantiate(givenPrefab, startPoint.position, startPoint.rotation);
+        if (newObject.TryGetComponent(out Rigidbody rigidBody))
+            ApplyForce(rigidBody);
+        Destroy(newObject, lifeTime);
+    }
+
     private void ApplyForce(Rigidbody rigidBody)
     {
         Vector3 force = startPoint.forward * launchSpeed;

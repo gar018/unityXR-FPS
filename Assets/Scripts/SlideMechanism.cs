@@ -23,15 +23,21 @@ public class SlideMechanism : XRSimpleInteractable
         
     }
 
+    public void DoBlowBack()
+    {
+            rb.AddRelativeForce(Vector3.right*forcePower);
+        
+    }
+
     public void PullbackSlide() 
     {
-        Debug.Log("AIMASSIST: I ACTUALLY PULL BACK THE SLIDE HAHAHAHAHAHAHAH");
+        //Debug.Log("AIMASSIST: I ACTUALLY PULL BACK THE SLIDE HAHAHAHAHAHAHAH");
         cj.targetPosition = new Vector3(slidePullbackDistance,0,0);
     }
 
     public void ReleaseSlide()
     {
-        Debug.Log("AIMASSIST: I ACTUALLY RELEASE THE SLIDE HAHAHAHAHAHAHAH");
+        //Debug.Log("AIMASSIST: I ACTUALLY RELEASE THE SLIDE HAHAHAHAHAHAHAH");
         cj.targetPosition = Vector3.zero;
     }
 }

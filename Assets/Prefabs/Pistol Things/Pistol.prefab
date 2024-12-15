@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4789336933765500393}
   - component: {fileID: 8635834595562968699}
   - component: {fileID: 2641267443002770630}
-  - component: {fileID: 7236024998937710626}
   - component: {fileID: 7897576109167854550}
+  - component: {fileID: 7368077010168593147}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -132,6 +132,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 8973087027829000663}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 800054736255265514}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6634279867655097391}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -146,6 +182,42 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8973087027829000663}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 800054736255265514}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6634279867655097391}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
@@ -162,32 +234,8 @@ MonoBehaviour:
   m_Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1151627394424605744}
-        m_TargetAssemblyTypeName: LaunchProjectile, Assembly-CSharp
-        m_MethodName: Fire
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7236024998937710626}
-        m_TargetAssemblyTypeName: Gun, Assembly-CSharp
-        m_MethodName: FireGun
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3611661445119869058}
-        m_TargetAssemblyTypeName: SlideMechanism, Assembly-CSharp
+      - m_Target: {fileID: 7368077010168593147}
+        m_TargetAssemblyTypeName: GunAffordanceProvider, Assembly-CSharp
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
@@ -256,7 +304,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -281,31 +329,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &7236024998937710626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729977940664515165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8275c3cdcb3914990ab1db438b9f16c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioSource: {fileID: 7897576109167854550}
-  _gunShot: {fileID: 8300000, guid: e326dd273cc23431c8eced13507982ff, type: 3}
-  _insertMag: {fileID: 8300000, guid: 4a7060b5b11414ac68358ba09c49dce3, type: 3}
-  _outOfAmmo: {fileID: 8300000, guid: 68733c24e68644a05a846cf9d743e6e3, type: 3}
-  _gunSlideSound: {fileID: 8300000, guid: 6233de66f660242de8c8e28b1ba1ba92, type: 3}
-  _smoke: {fileID: 0}
-  _bulletCasing: {fileID: 0}
-  _muzzleFlashSide: {fileID: 0}
-  _Muzzle_Flash_Front: {fileID: 0}
-  _gunSlider: {fileID: 1561991754812979632}
-  _sliderTarget: {fileID: 2088555591161581158}
-  _distanceThreshold: 0
-  _socketInteractor: {fileID: 5587349116892372039}
 --- !u!82 &7897576109167854550
 AudioSource:
   m_ObjectHideFlags: 0
@@ -402,6 +425,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7368077010168593147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729977940664515165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af881da4f05a4596a1cc815dc940618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 7897576109167854550}
+  liveFire: {fileID: 8300000, guid: 4735f2bafadb4460b98e9c91c7598140, type: 3}
+  dryFire: {fileID: 8300000, guid: 68733c24e68644a05a846cf9d743e6e3, type: 3}
+  insertMag: {fileID: 8300000, guid: 4a7060b5b11414ac68358ba09c49dce3, type: 3}
+  rackSlide: {fileID: 8300000, guid: 6233de66f660242de8c8e28b1ba1ba92, type: 3}
+  ammoAlertSound: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  bulletProjectile: {fileID: 4701014702650535798, guid: b83ba444a27f94de19dd50106a7d459c,
+    type: 3}
+  bulletCasing: {fileID: 5516981527177997687, guid: f86cbbc7be9e542d2923ddcffd24bdf2,
+    type: 3}
+  bullet: {fileID: 5516981527177997687, guid: f86cbbc7be9e542d2923ddcffd24bdf2, type: 3}
+  slide: {fileID: 3611661445119869058}
+  muzzle: {fileID: 1151627394424605744}
+  ejectionPort: {fileID: 893186310976472521}
+  magazineSocket: {fileID: 5587349116892372039}
 --- !u!1 &800054736255265514
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +537,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 474696263200527711}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &1962252170992222306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783615387931269311}
+  - component: {fileID: 893186310976472521}
+  m_Layer: 8
+  m_Name: Pistol Casing Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1783615387931269311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962252170992222306}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.2315844, y: -0, z: -0, w: 0.97281486}
+  m_LocalPosition: {x: -0.043599993, y: 0.085400015, z: 0.02140002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6830319587546947154}
+  m_LocalEulerAnglesHint: {x: -26.781, y: 0, z: 0}
+--- !u!114 &893186310976472521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962252170992222306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3363a636a5afe453297a6609ac399974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5516981527177997687, guid: f86cbbc7be9e542d2923ddcffd24bdf2,
+    type: 3}
+  startPoint: {fileID: 1783615387931269311}
+  launchSpeed: 1
+  lifeTime: 5
 --- !u!1 &2010450868272894325
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,6 +902,7 @@ Transform:
   - {fileID: 7197261386382262683}
   - {fileID: 7487771300672176121}
   - {fileID: 8823554925477250063}
+  - {fileID: 1783615387931269311}
   m_Father: {fileID: 4789336933765500393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5590436291371370664
@@ -920,7 +1021,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7236024998937710626}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Gun, Assembly-CSharp
         m_MethodName: AddOrRemoveGunClip
         m_Mode: 1
@@ -971,7 +1072,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7236024998937710626}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Gun, Assembly-CSharp
         m_MethodName: AddOrRemoveGunClip
         m_Mode: 1
@@ -1063,7 +1164,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.03
+  m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7554685968955665250
 GameObject:
@@ -1096,7 +1197,7 @@ Transform:
   m_GameObject: {fileID: 7554685968955665250}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1354,10 +1455,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3611661445119869058}
+        m_TargetAssemblyTypeName: SlideMechanism, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3611661445119869058}
+        m_TargetAssemblyTypeName: SlideMechanism, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -1407,7 +1532,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   forcePower: 50
-  slidePullbackDistance: -0.06
+  slidePullbackDistance: -0.025
 --- !u!1 &8853929807219289491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,8 +1584,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.2364583, y: 0.05624698, z: 0.04006516}
-  m_Center: {x: -0.017503768, y: -0.005377751, z: 0.00014686771}
+  m_Size: {x: 0.24390593, y: 0.059908964, z: 0.0612493}
+  m_Center: {x: -0.020696804, y: -0.0074369125, z: -0.0020802207}
 --- !u!1 &8973087027829000663
 GameObject:
   m_ObjectHideFlags: 0
