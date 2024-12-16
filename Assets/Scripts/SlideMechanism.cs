@@ -7,6 +7,9 @@ public class SlideMechanism : XRSimpleInteractable
 {
     public float forcePower;
     public float slidePullbackDistance;
+
+    public ChangeMaterial affordanceGlow;
+
     private Rigidbody rb;
     private ConfigurableJoint cj;
 
@@ -39,6 +42,16 @@ public class SlideMechanism : XRSimpleInteractable
     {
         //Debug.Log("AIMASSIST: I ACTUALLY RELEASE THE SLIDE HAHAHAHAHAHAHAH");
         cj.targetPosition = Vector3.zero;
+    }
+
+    public void EnableGlow()
+    {
+        affordanceGlow.SetOtherMaterial();
+    }
+
+    public void DisableGlow()
+    {
+        affordanceGlow.SetOriginalMaterial();
     }
 }
 

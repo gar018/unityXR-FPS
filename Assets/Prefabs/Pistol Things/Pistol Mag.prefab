@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 3885547636133981164}
   - component: {fileID: 4924922324972063502}
   - component: {fileID: 7882003011093599442}
+  - component: {fileID: 4462483380472707947}
   m_Layer: 6
   m_Name: Pistol Mag
   m_TagString: Untagged
@@ -555,6 +556,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoCount: 10
   ammoText: {fileID: 7813279841432317716}
+  affordanceGlow: {fileID: 4462483380472707947}
+--- !u!114 &4462483380472707947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296819828743390906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efd09f44c334cc45abf43175b085d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherMaterial: {fileID: 2100000, guid: 41c07cb263bcc4085bdfe3d57eb0137a, type: 2}
+  meshRenderer: {fileID: 3403946813131667880}
 --- !u!1 &9218988329637715104
 GameObject:
   m_ObjectHideFlags: 0

@@ -111,6 +111,7 @@ public class GunAffordanceProvider : MonoBehaviour
                 else
                 {
                     affordanceState = GunAffordanceState.OUTOFAMMO;
+                    magazine.EnableGlow();
                 }
             }
             
@@ -147,6 +148,7 @@ public class GunAffordanceProvider : MonoBehaviour
             else if (!(magazine.ammoCount > 0))
             {
                 affordanceState = GunAffordanceState.OUTOFAMMO;
+                magazine.EnableGlow();
             }
         }
         else
@@ -190,7 +192,7 @@ public class GunAffordanceProvider : MonoBehaviour
                 }
             }
         }
-            
+
         
         else if (affordanceState == GunAffordanceState.LOADED)
         {
@@ -206,6 +208,7 @@ public class GunAffordanceProvider : MonoBehaviour
             {
                 magazine.Decrement();
                 affordanceState = GunAffordanceState.CHAMBERED;
+                slide.DisableGlow();
             }
             else //this state should never be reached. however, this does prevent any weird logic from happening.
             {
@@ -242,10 +245,12 @@ public class GunAffordanceProvider : MonoBehaviour
             //STATE LOGIC
             if(magazine.ammoCount > 0 ) {
                 affordanceState = GunAffordanceState.LOADED;
+                slide.EnableGlow();
             }
             else
             {
                 affordanceState = GunAffordanceState.OUTOFAMMO;
+                magazine.EnableGlow();
             }
             
         }
@@ -259,6 +264,8 @@ public class GunAffordanceProvider : MonoBehaviour
 
     void EjectMag(SelectExitEventArgs args)
     {
+        magazine.DisableGlow();
+        slide.DisableGlow();
         magazine = null;
         if(affordanceState == GunAffordanceState.CHAMBERED)
         {
@@ -305,5 +312,29 @@ public class GunAffordanceProvider : MonoBehaviour
         magazineSocket.selectExited.RemoveListener(EjectMag);
         slide.selectEntered.RemoveListener(RackSlide);
         slide.selectExited.RemoveListener(ReleaseSlide);
+    }
+
+    void UpdateAffordances()
+    {
+        switch (affordanceState)
+        {
+            case GunAffordanceState.EMPTY:
+                slide.DisableGlow();
+            break;
+
+            case GunAffordanceState.LOADED:
+
+            break;
+
+            case GunAffordanceState.OUTOFAMMO:
+
+            break;
+            
+            case GunAffordanceState.CHAMBERED:
+
+            break;
+            
+            
+        }
     }
 }

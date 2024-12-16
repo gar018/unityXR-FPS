@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2641267443002770630}
   - component: {fileID: 7897576109167854550}
   - component: {fileID: 7368077010168593147}
+  - component: {fileID: 4997688770805982101}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -63,7 +64,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!114 &2641267443002770630
@@ -243,6 +244,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4997688770805982101}
+        m_TargetAssemblyTypeName: VibrateController, Assembly-CSharp
+        m_MethodName: VibrateStrong
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.4
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -442,8 +455,9 @@ MonoBehaviour:
   dryFire: {fileID: 8300000, guid: 68733c24e68644a05a846cf9d743e6e3, type: 3}
   insertMag: {fileID: 8300000, guid: 4a7060b5b11414ac68358ba09c49dce3, type: 3}
   rackSlide: {fileID: 8300000, guid: 6233de66f660242de8c8e28b1ba1ba92, type: 3}
-  ammoAlertSound: {fileID: 0}
-  muzzleFlash: {fileID: 0}
+  outOfAmmoAlertSound: {fileID: 8300000, guid: a6d54794b4ce94de1b7b1587af379192, type: 3}
+  chamberedAlertSound: {fileID: 8300000, guid: a6e6cb127e7044a3eaa8772d8a314706, type: 3}
+  muzzleFlash: {fileID: 937777535591630541}
   bulletProjectile: {fileID: 4701014702650535798, guid: b83ba444a27f94de19dd50106a7d459c,
     type: 3}
   bulletCasing: {fileID: 5516981527177997687, guid: f86cbbc7be9e542d2923ddcffd24bdf2,
@@ -453,6 +467,20 @@ MonoBehaviour:
   muzzle: {fileID: 1151627394424605744}
   ejectionPort: {fileID: 893186310976472521}
   magazineSocket: {fileID: 5587349116892372039}
+--- !u!114 &4997688770805982101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729977940664515165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7686e657f003894781f5cc6240c99f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strongVibrate: 0.75
+  weakVibrate: 0.25
 --- !u!1 &800054736255265514
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +643,8 @@ Transform:
   m_LocalPosition: {x: -0.19150001, y: 0.07760001, z: -0.000000007450581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1138467231957219203}
   m_Father: {fileID: 6830319587546947154}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1151627394424605744
@@ -1181,6 +1210,7 @@ GameObject:
   - component: {fileID: 785440597050710640}
   - component: {fileID: 8899170964898807237}
   - component: {fileID: 3611661445119869058}
+  - component: {fileID: 2370296615512009387}
   m_Layer: 9
   m_Name: Pistol Slide
   m_TagString: Untagged
@@ -1533,6 +1563,21 @@ MonoBehaviour:
       m_Calls: []
   forcePower: 50
   slidePullbackDistance: -0.025
+  affordanceGlow: {fileID: 2370296615512009387}
+--- !u!114 &2370296615512009387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554685968955665250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efd09f44c334cc45abf43175b085d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherMaterial: {fileID: 2100000, guid: 41c07cb263bcc4085bdfe3d57eb0137a, type: 2}
+  meshRenderer: {fileID: 2017372052743894279}
 --- !u!1 &8853929807219289491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,3 +1684,104 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21789727, y: 0.044100046, z: 0.031534936}
   m_Center: {x: -0.07621007, y: 0.06864704, z: 0.00076356716}
+--- !u!1001 &1136000732470467479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3514155215077056676}
+    m_Modifications:
+    - target: {fileID: 1743301284569550, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_Name
+      value: MuzzleFlashCustomPistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25907838
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25907838
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25907838
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
+        type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+--- !u!198 &937777535591630541 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136000732470467479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1138467231957219203 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136000732470467479}
+  m_PrefabAsset: {fileID: 0}

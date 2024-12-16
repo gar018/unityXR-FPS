@@ -9,12 +9,15 @@ public class ChangeMaterial : MonoBehaviour
     public Material otherMaterial = null;
 
     private bool usingOther = false;
-    private MeshRenderer meshRenderer = null;
+    public MeshRenderer meshRenderer;
     private Material originalMaterial = null;
 
     private void Awake()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
+        if (meshRenderer == null)
+        {
+            meshRenderer = GetComponent<MeshRenderer>();
+        }
         originalMaterial = meshRenderer.material;
     }
 
