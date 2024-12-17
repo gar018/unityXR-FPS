@@ -5,6 +5,10 @@ This project is the culmination of my first experiences working with Unity and O
 via Bucknell's 'Design and Development for XR' course. Our final project was to focus on something we wanted to create
 in Unity- applying the UX concepts we had learned throughout the class. Because I have always been a fan of shooter games, and wanted to explore how one would create a gun of their own, the design I went with was to create an interactable firearm with behaviors that resemble a real-life firearm.
 
+## Demo Video
+
+[![Watch the demo video here!](https://img.youtube.com/vi/1CRLHornsws/maxresdefault.jpg)](https://www.youtube.com/watch?v=1CRLHornsws)
+
 ## Implemented Features
 
 - Teleportation and Continuous Move Locomotion (with tunneling vignette to help with motion sickness)
